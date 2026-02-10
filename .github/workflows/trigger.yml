@@ -1,0 +1,14 @@
+name: Remote Triggered Workflow
+on:
+  repository_dispatch:
+    types: [lib-update-event] # This 'type' must match your Elixir code
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Receive Data
+        run: |
+          echo "Triggered by: ${{ github.event.client_payload.user_name }}"
+          echo "Cluster Type: ${{ github.event.client_payload.cluster_type }}"
+          echo "Branch: ${{github.event.client_payload.branch}}
