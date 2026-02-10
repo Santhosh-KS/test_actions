@@ -11,4 +11,4 @@ jobs:
         run: |
           echo "Triggered by: ${{ github.event.client_payload.user_name }}"
           echo "Cluster Type: ${{ github.event.client_payload.cluster_type }}"
-          echo "Branch: ${{github.event.client_payload.branch}}
+          echo "Branch: ${{github.event.client_payload.branch}}"
